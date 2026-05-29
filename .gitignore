@@ -1,0 +1,16 @@
+# System files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor folders
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
+
+# Local server / dependency output
+node_modules/
+dist/
+build/
