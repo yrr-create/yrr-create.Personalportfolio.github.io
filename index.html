@@ -112,7 +112,7 @@
             }
         }
 
-        /* ========== 卡片容器 - 新增 ========== */
+        /* ========== 卡片容器 ========== */
         .hero-card {
             max-width: 1100px;
             margin: 40px auto;
@@ -136,7 +136,6 @@
             gap: 60px;
         }
 
-        /* 左边照片区域 */
         .hero-image {
             flex-shrink: 0;
         }
@@ -149,13 +148,11 @@
             box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
         }
 
-        /* 右边内容区域 */
         .hero-content {
             flex: 1;
             text-align: center;
         }
 
-        /* 标题样式 */
         h1 {
             margin: 0;
             font-size: 68px;
@@ -177,7 +174,6 @@
             color: #4a6a85;
         }
 
-        /* 蓝色文本框 */
         .intro-box {
             background: linear-gradient(135deg, #eef5fc 0%, #dceaf3 100%);
             border-radius: 24px;
@@ -212,8 +208,19 @@
             text-transform: none;
         }
 
-        /* 移动端 */
         @media (max-width: 768px) {
+
+            .project-card {
+                flex-direction: column;  /* 垂直排列 */
+            }
+            .project-image {
+                width: 100%;             /* 图片占满宽度 */
+                min-height: 200px;
+                height: auto;
+            }
+            .project-content {
+                padding: 20px 24px;
+            }
             .hero-card {
                 margin: 20px;
                 padding: 28px 20px;
@@ -255,6 +262,483 @@
         section {
             scroll-margin-top: 80px;
         }
+
+        /* ========== Experience 区块 ========== */
+        #experience {
+            scroll-margin-top: 80px;
+        }
+
+        .experience-card {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(2px);
+            border-radius: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 48px 40px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .experience-card:hover {
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 400;
+            letter-spacing: 4px;
+            margin-bottom: 48px;
+            background: linear-gradient(135deg, #243447 0%, #3a5a74 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .timeline-date {
+            min-width: 140px;
+            padding-top: 4px;
+        }
+
+        /* 标签样式 */
+        .date-tag {
+            background: linear-gradient(135deg, #2c5f8a 0%, #1a3f5c 100%);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 6px 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: #243447;
+        }
+
+        .timeline-content h4 {
+            margin: 0 0 12px 0;
+            font-size: 15px;
+            font-weight: 450;
+            color: #4a6a85;
+        }
+
+        .timeline-content ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .timeline-content li {
+            margin: 6px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #3a5568;
+        }
+
+        @media (max-width: 768px) {
+            .experience-card {
+                margin: 20px;
+                padding: 28px 20px;
+                border-radius: 32px;
+            }
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 32px;
+            }
+            .timeline-item {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .timeline-date {
+                min-width: auto;
+            }
+            .date-tag {
+                font-size: 12px;
+                padding: 4px 12px;
+            }
+            .timeline-content h3 {
+                font-size: 18px;
+            }
+            .timeline-content li {
+                font-size: 13px;
+            }
+        }
+
+
+        /* ========== Portfolio 区块 - 卡片轮播样式 ========== */
+        #portfolio {
+            scroll-margin-top: 80px;
+        }
+
+        .portfolio-card {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(2px);
+            border-radius: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 48px 40px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 分类切换按钮 */
+        .portfolio-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: none;
+            border: 2px solid #4a6a85;
+            color: #4a6a85;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 28px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            letter-spacing: 1px;
+        }
+
+        .tab-btn:hover {
+            border-color: #2c5f8a;
+            color: #2c5f8a;
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #2c5f8a 0%, #1a3f5c 100%);
+            border-color: #2c5f8a;
+            color: white;
+            box-shadow: 0 4px 12px rgba(44, 95, 138, 0.3);
+        }
+
+        /* 项目容器 - 轮播 */
+        .projects-container {
+            display: none;
+        }
+
+        .projects-container.active-container {
+            display: block;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            display: flex;           /* flex 左右布局 */
+            flex-direction: row;     /* 水平排列 */
+            align-items: stretch;    /* 拉伸对齐 */
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 45%;              /* 图片占45%宽度 */
+            height: auto;
+            min-height: 280px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            background: #dceaf3;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+            padding: 12px;
+            scroll-snap-type: x mandatory;
+            flex-shrink: 0;          /* 防止被压缩 */
+        }
+
+        .project-image img {
+            height: 100%;
+            max-height: 260px;
+            width: auto;
+            object-fit: cover;
+            border-radius: 12px;
+            scroll-snap-align: start;
+        }
+
+        .project-content {
+            flex: 1;                 /* 占据剩余空间 */
+            padding: 24px 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;  /* 垂直居中 */
+        }
+
+        .project-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            font-weight: 600;
+            color: #243447;
+        }
+
+        .project-content p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #4a6a85;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .project-tags span {
+            background: rgba(44, 95, 138, 0.12);
+            color: #2c5f8a;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* 导航按钮 */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(44, 95, 138, 0.8);
+            color: white;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: #2c5f8a;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .carousel-btn.prev {
+            left: -60px;
+        }
+
+        .carousel-btn.next {
+            right: -60px;
+        }
+
+        /* 导航点 */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 32px;
+            padding: 8px 0;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #c8d6e2;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dot.active {
+            width: 28px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, #2c5f8a 0%, #1a3f5c 100%);
+        }
+
+        .dot:hover {
+            background: #2c5f8a;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 900px) {
+            .carousel-btn.prev {
+                left: -20px;
+            }
+            .carousel-btn.next {
+                right: -20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-card {
+                margin: 20px;
+                padding: 28px 20px;
+                border-radius: 32px;
+            }
+            .portfolio-tabs {
+                gap: 16px;
+                margin-bottom: 32px;
+            }
+            .tab-btn {
+                font-size: 14px;
+                padding: 8px 20px;
+            }
+            .project-image {
+                height: 220px;
+            }
+            .project-content {
+                padding: 20px 24px;
+            }
+            .project-content h3 {
+                font-size: 18px;
+            }
+            .project-content p {
+                font-size: 13px;
+            }
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+            .carousel-btn.prev {
+                left: -10px;
+            }
+            .carousel-btn.next {
+                right: -10px;
+            }
+        }
+
+
+        /* ========== Contact 区块 ========== */
+        #contact {
+            scroll-margin-top: 80px;
+        }
+
+        .contact-card {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(2px);
+            border-radius: 48px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 48px 40px;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-intro {
+            font-size: 18px;
+            color: #4a6a85;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+        }
+
+        .cv-section {
+            margin-bottom: 48px;
+        }
+
+        .cv-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #2c5f8a 0%, #1a3f5c 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 14px 36px;
+            border-radius: 40px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .cv-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            color: #4a6a85;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .social-icon:hover {
+            color: #2c5f8a;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-card {
+                margin: 20px;
+                padding: 32px 24px;
+                border-radius: 32px;
+            }
+            .contact-intro {
+                font-size: 15px;
+                margin-bottom: 32px;
+            }
+            .cv-btn {
+                font-size: 16px;
+                padding: 12px 28px;
+            }
+            .social-links {
+                gap: 24px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -272,19 +756,16 @@
         </div>
     </nav>
 
+    <!-- Home 区块 -->
     <section id="home">
         <div class="hero-card">
             <div class="hero">
-                <!-- 左边照片 -->
                 <div class="hero-image">
                     <img src="img/myself.jpg" alt="Yi Rongrong">
                 </div>
-                
-                <!-- 右边内容 -->
                 <div class="hero-content">
                     <h1 id="mainTitle">YI RONGRONG</h1>
                     <div class="subtitle" id="subtitle">Embedded Software Engineer</div>
-                    
                     <div class="intro-box">
                         <h2 id="aboutTitle">About Me</h2>
                         <p id="aboutText">
@@ -298,6 +779,174 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience 区块 -->
+    <section id="experience">
+        <div class="experience-card">
+            <h2 class="section-title" id="expTitle">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date-tag">2022 - Present</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Senior Embedded Engineer</h3>
+                        <h4>Company Name · City</h4>
+                        <ul>
+                            <li>Developed firmware for ARM Cortex-M series microcontrollers</li>
+                            <li>Implemented RTOS-based scheduling for real-time applications</li>
+                            <li>Collaborated with hardware team to debug I2C/SPI/UART interfaces</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date-tag">2020 - 2022</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Firmware Developer</h3>
+                        <h4>Previous Company · City</h4>
+                        <ul>
+                            <li>Designed bootloader for OTA updates</li>
+                            <li>Optimized memory usage by 30% through code refactoring</li>
+                            <li>Maintained C/C++ codebase for consumer electronics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date-tag">2018 - 2020</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Junior Embedded Engineer</h3>
+                        <h4>First Company · City</h4>
+                        <ul>
+                            <li>Assisted in firmware development for IoT devices</li>
+                            <li>Performed unit testing and debugging</li>
+                            <li>Documented technical specifications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+     <!-- Portfolio 区块 -->
+    <section id="portfolio">
+        <div class="portfolio-card">
+            <h2 class="section-title" id="portfolioTitle">Portfolio</h2>
+            
+            <!-- 分类切换按钮 -->
+            <div class="portfolio-tabs">
+                <button class="tab-btn active" data-category="company">Company Projects</button>
+                <button class="tab-btn" data-category="personal">Personal Projects</button>
+            </div>
+            
+            <!-- Company Projects 轮播 -->
+            <div id="company-projects" class="projects-container active-container">
+                <div class="carousel">
+                    <button class="carousel-btn prev" onclick="changeProject('company', -1)">❮</button>
+                    <div class="project-card" id="company-project-card">
+                        <div class="project-image">
+                            <img id="company-project-img" src="img/company_projects/APP/TEST_MY_APP.mp4" alt="APP Project">
+                        </div>
+                        <div class="project-content">
+                            <h3 id="company-project-title">APP Test Project</h3>
+                            <p id="company-project-desc">Mobile application testing framework for embedded systems integration.</p>
+                            <div class="project-tags" id="company-project-tags">
+                                <span>APP</span>
+                                <span>Testing</span>
+                                <span>Embedded</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next" onclick="changeProject('company', 1)">❯</button>
+                    
+                    <div class="carousel-dots" id="company-dots"></div>
+                </div>
+            </div>
+            
+            <!-- Personal Projects 轮播 -->
+            <div id="personal-projects" class="projects-container">
+                <div class="carousel">
+                    <button class="carousel-btn prev" onclick="changeProject('personal', -1)">❮</button>
+                    <div class="project-card" id="personal-project-card">
+                        <div class="project-image">
+                            <img id="personal-project-img" src="img/personal_projects/ble/1.jpg" alt="BLE Project">
+                        </div>
+                        <div class="project-content">
+                            <h3 id="personal-project-title">BLE Module Development</h3>
+                            <p id="personal-project-desc">Bluetooth Low Energy module for IoT device connectivity.</p>
+                            <div class="project-tags" id="personal-project-tags">
+                                <span>BLE</span>
+                                <span>IoT</span>
+                                <span>Nordic</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next" onclick="changeProject('personal', 1)">❯</button>
+                    
+                    <div class="carousel-dots" id="personal-dots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact 区块 -->
+    <section id="contact">
+        <div class="contact-card">
+            <h2 class="section-title" id="contactTitle">Contact Me</h2>
+            <p class="contact-intro" id="contactIntro">
+                I'm always open to new opportunities and interesting conversations.
+                <br><br><br><br><br><br><br>
+                Feel free to reach out!
+            </p>
+            <div class="cv-section">
+                <a href="cv/Yi_Rongrong_CV.pdf" download id="cvBtn" class="cv-btn">
+                    Download CV
+                </a>
+            </div>
+            <div class="social-links">
+                <!-- GitHub -->
+                <a href="https://github.com/yourusername" target="_blank" class="social-icon" aria-label="GitHub">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.52.117-3.16 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.64.24 2.86.118 3.16.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.22 0 1.602-.015 2.894-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.979 0 1.771-.773 1.771-1.729V1.729C24 .774 23.204 0 22.225 0z"/>
+                    </svg>
+                </a>
+                
+                <!-- Gmail（谷歌邮箱） -->
+                <a href="mailto:yourname@gmail.com" class="social-icon" aria-label="Gmail">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+                
+                <!-- Facebook -->
+                <a href="https://facebook.com/yourusername" target="_blank" class="social-icon" aria-label="Facebook">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.49h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/>
+                    </svg>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://instagram.com/yourusername" target="_blank" class="social-icon" aria-label="Instagram">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.81.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.81-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.81-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.81.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.33.01 7.05.06 5.75.11 4.85.3 4.06.59c-.85.31-1.57.73-2.29 1.45-.72.72-1.14 1.44-1.45 2.29-.29.79-.48 1.69-.53 2.99C.01 8.33 0 8.74 0 12s.01 3.67.06 4.95c.05 1.3.24 2.2.53 2.99.31.85.73 1.57 1.45 2.29.72.72 1.44 1.14 2.29 1.45.79.29 1.69.48 2.99.53 1.28.05 1.69.06 4.95.06s3.67-.01 4.95-.06c1.3-.05 2.2-.24 2.99-.53.85-.31 1.57-.73 2.29-1.45.72-.72 1.14-1.44 1.45-2.29.29-.79.48-1.69.53-2.99.05-1.28.06-1.69.06-4.95s-.01-3.67-.06-4.95c-.05-1.3-.24-2.2-.53-2.99-.31-.85-.73-1.57-1.45-2.29-.72-.72-1.44-1.14-2.29-1.45-.79-.29-1.69-.48-2.99-.53C15.67.01 15.26 0 12 0z"/>
+                        <path d="M12 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+                        <circle cx="18.41" cy="5.59" r="1.44"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -321,6 +970,11 @@
                         <br><br>
                         I believe in writing clean, maintainable code and collaborating effectively with cross-functional teams
                         to deliver high-quality embedded solutions.`,
+                expTitle: "Experience",
+                contactTitle: "Contact Me",
+                contactIntro: "I'm always open to new opportunities and interesting conversations. Feel free to reach out!",
+                cvText: "Download CV",
+                cvFile: "cv/Yi_Rongrong_CV.pdf",
                 langBtn: "English"
             },
             zh: {
@@ -338,6 +992,11 @@
                         <br><br>
                         我相信编写简洁、可维护的代码，并与跨职能团队有效协作，
                         交付高质量的嵌入式解决方案。`,
+                expTitle: "工作经历",
+                contactTitle: "联系我",
+                contactIntro: "我始终对新机会和有趣的对话持开放态度。欢迎联系我！",
+                cvText: "下载简历",
+                cvFile: "cv/嵌入式软件工程师-易蓉蓉的简历.pdf",
                 langBtn: "中文"
             }
         };
@@ -346,20 +1005,235 @@
             const lang = isEnglish ? 'zh' : 'en';
             const t = translations[lang];
             
+            // 更新导航栏
             document.querySelector('.nav-home').textContent = t.navHome;
             document.querySelector('.nav-experience').textContent = t.navExperience;
             document.querySelector('.nav-portfolio').textContent = t.navPortfolio;
             document.querySelector('.nav-contact').textContent = t.navContact;
+            
+            // 更新标题和 About
             document.getElementById('mainTitle').textContent = t.mainTitle;
             document.getElementById('subtitle').textContent = t.subtitle;
             document.getElementById('aboutTitle').textContent = t.aboutTitle;
             document.getElementById('aboutText').innerHTML = t.aboutText;
+            
+            // 更新 Experience 标题
+            const expTitle = document.getElementById('expTitle');
+            if (expTitle) expTitle.textContent = t.expTitle;
+            
+            // 更新 Contact 区域
+            const contactTitle = document.getElementById('contactTitle');
+            const contactIntro = document.getElementById('contactIntro');
+            const cvBtn = document.getElementById('cvBtn');
+            if (contactTitle) contactTitle.textContent = t.contactTitle;
+            if (contactIntro) contactIntro.textContent = t.contactIntro;
+            if (cvBtn) {
+                cvBtn.href = t.cvFile;
+                cvBtn.innerHTML = t.cvText;
+            }
+            
+            // 更新按钮文字
             document.getElementById('langSwitch').textContent = t.langBtn;
             document.documentElement.lang = lang;
             isEnglish = !isEnglish;
         }
 
         document.getElementById('langSwitch').addEventListener('click', switchLanguage);
+        
+        // ========== 平滑滚动跳转 ==========
+        document.querySelectorAll('.nav-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // ========== Portfolio 数据 ==========
+        const companyProjects = [
+            {
+                img: "img/company_projects/APP/app.png",
+                title: "APP Test Project",
+                desc: "Mobile application testing framework for embedded systems integration.",
+                tags: ["APP", "Testing", "Embedded"]
+            },
+            {
+                img: "img/company_projects/G22C_W19J/W19J.png",
+                title: "W19J Module",
+                desc: "Wireless module development with comprehensive testing.",
+                tags: ["Wireless", "Module", "Testing"]
+            },
+            {
+                img: "img/company_projects/K6/2.jpg",
+                title: "Vibration Test System",
+                desc: "Vibration testing and analysis for K6 project.",
+                tags: ["Vibration", "Testing", "Analysis"]
+            },
+            {
+                img: "img/company_projects/ring/2.jpg",
+                title: "Smart Ring Controller",
+                desc: "Gesture control firmware for smart ring device.",
+                tags: ["Gesture", "Wearable", "IMU"]
+            },
+            {
+                img: "img/company_projects/W15J/WEATHER.png",
+                title: "Weather Station Project",
+                desc: "Embedded weather monitoring system with sensor integration.",
+                tags: ["Weather", "Sensors", "Data"]
+            },
+            
+        ];
+
+        const personalProjects = [
+            {
+                img: "img/personal_projects/ble/2.jpg",
+                
+                title: "BLE Module Development",
+                desc: "Bluetooth Low Energy module for IoT device connectivity and data transmission.",
+                tags: ["BLE", "IoT", "Nordic"]
+            },
+            {
+                img: "img/personal_projects/stm32/1.jpg",
+                title: "STM32 Learning Projects",
+                desc: "Various STM32 development projects including peripherals and RTOS.",
+                tags: ["STM32", "ARM", "RTOS"]
+            }
+        ];
+
+        // 当前索引
+        let companyIndex = 0;
+        let personalIndex = 0;
+        
+        // 自动轮播定时器
+        let autoInterval;
+
+        // 更新公司项目显示
+        function updateCompanyProject() {
+            const project = companyProjects[companyIndex];
+            if (project) {
+                const imgElement = document.getElementById('company-project-img');
+                // 检查文件扩展名，决定使用 img 还是 video
+                //用图片最好，视频的选项保留
+                if (project.img.endsWith('.mp4')) {
+                    // 对于视频，需要特殊处理
+                    imgElement.outerHTML = `<video id="company-project-img" autoplay loop muted style="width:100%;height:100%;object-fit:cover"><source src="${project.img}" type="video/mp4"></video>`;
+                } else {
+                    imgElement.src = project.img;
+                }
+                document.getElementById('company-project-title').textContent = project.title;
+                document.getElementById('company-project-desc').textContent = project.desc;
+                const tagsContainer = document.getElementById('company-project-tags');
+                tagsContainer.innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
+            }
+            updateDots('company');
+        }
+
+        // 更新个人项目显示
+        function updatePersonalProject() {
+            const project = personalProjects[personalIndex];
+            if (project) {
+                document.getElementById('personal-project-img').src = project.img;
+                document.getElementById('personal-project-title').textContent = project.title;
+                document.getElementById('personal-project-desc').textContent = project.desc;
+                const tagsContainer = document.getElementById('personal-project-tags');
+                tagsContainer.innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
+            }
+            updateDots('personal');
+        }
+
+        // 更新导航点
+        function updateDots(type) {
+            const projects = type === 'company' ? companyProjects : personalProjects;
+            const currentIndex = type === 'company' ? companyIndex : personalIndex;
+            const dotsContainer = document.getElementById(`${type}-dots`);
+            
+            dotsContainer.innerHTML = '';
+            projects.forEach((_, idx) => {
+                const dot = document.createElement('span');
+                dot.className = 'dot' + (idx === currentIndex ? ' active' : '');
+                dot.onclick = () => {
+                    if (type === 'company') {
+                        companyIndex = idx;
+                        updateCompanyProject();
+                        resetAutoTimer();
+                    } else {
+                        personalIndex = idx;
+                        updatePersonalProject();
+                        resetAutoTimer();
+                    }
+                };
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        // 切换项目
+        function changeProject(type, direction) {
+            if (type === 'company') {
+                companyIndex = (companyIndex + direction + companyProjects.length) % companyProjects.length;
+                updateCompanyProject();
+            } else {
+                personalIndex = (personalIndex + direction + personalProjects.length) % personalProjects.length;
+                updatePersonalProject();
+            }
+            resetAutoTimer();
+        }
+
+        // 重置自动轮播定时器
+        function resetAutoTimer() {
+            if (autoInterval) clearInterval(autoInterval);
+            autoInterval = setInterval(() => {
+                // 获取当前激活的分类
+                const activeContainer = document.querySelector('.projects-container.active-container');
+                if (activeContainer && activeContainer.id === 'company-projects') {
+                    companyIndex = (companyIndex + 1) % companyProjects.length;
+                    updateCompanyProject();
+                } else if (activeContainer && activeContainer.id === 'personal-projects') {
+                    personalIndex = (personalIndex + 1) % personalProjects.length;
+                    updatePersonalProject();
+                }
+            }, 5000);
+        }
+
+        // 分类切换
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const companyContainer = document.getElementById('company-projects');
+        const personalContainer = document.getElementById('personal-projects');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                if (category === 'company') {
+                    companyContainer.classList.add('active-container');
+                    personalContainer.classList.remove('active-container');
+                    resetAutoTimer();
+                } else {
+                    personalContainer.classList.add('active-container');
+                    companyContainer.classList.remove('active-container');
+                    resetAutoTimer();
+                }
+            });
+        });
+
+
+        // 初始化
+        updateCompanyProject();
+        updatePersonalProject();
+        resetAutoTimer();
+        
+        // 将 changeProject 挂载到 window 对象
+        window.changeProject = changeProject;
+
     </script>
 
 </body>
