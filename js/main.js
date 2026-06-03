@@ -9,18 +9,25 @@ let isEnglish = true;
                 mainTitle: "YI RONGRONG",
                 subtitle: "Embedded Software Engineer",
                 aboutTitle: "About Me",
-                aboutText: `I am an Embedded Software Engineer passionate about building efficient and reliable systems.
-                        With experience in firmware development, real-time operating systems, and hardware-software integration,
-                        I strive to create software that bridges the gap between hardware and software.
-                        I love solving complex problems and continuously learning new technologies.
-                        <br><br>
-                        I believe in writing clean, maintainable code and collaborating effectively with cross-functional teams
-                        to deliver high-quality embedded solutions.`,
+                aboutText: `
+                Hi, I am Rongrong, an embedded firmware engineer with 4 years of experience in smart wearable products, including smart rings, watches, and bands.
+<br><br>
+My work focuses on full-device firmware development, BLE applications, touch driver integration, display/UI adaptation, peripheral debugging, firmware maintenance, and customer-specific firmware customization.
+<br><br>
+I work across multiple SDKs and customer project branches, using Source Insight, Code::Blocks, Visual Studio, SVN, SEGGER J-Link, and basic Git workflows for code reading, firmware development, flashing, debugging, validation, and issue tracking.
+                `,
                 expTitle: "Experience",
                 contactTitle: "Contact Me",
-                contactIntro: "I'm always open to new opportunities and interesting conversations. Feel free to reach out!",
+                contactIntro: "I am open to embedded firmware opportunities, wearable device projects, and technical collaboration.",
+                contactEmailLabel: "Email",
+                contactEmail: "your-email@example.com",
+                contactFocusLabel: "Focus",
+                contactFocus: "BLE Wearables · Smart Rings · Smart Watches · Firmware Debugging",
+                contactAvailabilityLabel: "Availability",
+                contactAvailability: "Open to job opportunities, freelance projects, and collaboration.",
                 cvText: "Download CV",
-                cvFile: "cv/Yi_Rongrong_CV.pdf",
+                cvFile: "CV/Yi_Rongrong_CV.pdf",
+                sendEmailText: "Send Email",
                 langBtn: "English"
             },
             zh: {
@@ -31,18 +38,26 @@ let isEnglish = true;
                 mainTitle: "易蓉蓉",
                 subtitle: "嵌入式软件工程师",
                 aboutTitle: "关于我",
-                aboutText: `我是一名嵌入式软件工程师，热衷于构建高效可靠的系统。
-                        拥有固件开发、实时操作系统和软硬件集成方面的丰富经验，
-                        我致力于创造连接硬件与软件的创新解决方案。
-                        我热爱解决复杂问题，并持续学习前沿技术。
-                        <br><br>
-                        我相信编写简洁、可维护的代码，并与跨职能团队有效协作，
-                        交付高质量的嵌入式解决方案。`,
+                aboutText: `我是一名嵌入式固件工程师，拥有 4 年智能穿戴产品开发经验，主要参与智能戒指、手表、手环等产品的整机固件开发、问题定位修复与版本维护。工作内容覆盖 BLE 蓝牙应用开发、触控驱动集成适配、显示与 UI 资源适配、外设功能调试，以及客户定制版本的功能修改和问题跟进。
+<br>
+我熟悉 Source Insight、Code::Blocks、Visual Studio、SVN、SEGGER J-Link 等开发、版本管理和调试工具，同时具备 Git 基础使用经验。能够在多套 SDK 和客户项目分支中完成代码阅读、功能适配、固件编译、烧录验证和问题定位。日常开发中，我注重固件稳定性、可维护性和实际产品交付，具备从需求理解、代码调试、问题分析到固件验证的完整开发经验。
+<br>
+在项目协作中，我能够根据客户反馈和测试现象定位固件侧问题，并配合硬件、App 和测试人员完成验证闭环。相比单一功能实现，我更关注功能在真实产品中的稳定运行、不同客户版本之间的差异维护，以及后续交付风险。
+                `,
+
+
                 expTitle: "工作经历",
                 contactTitle: "联系我",
-                contactIntro: "我始终对新机会和有趣的对话持开放态度。欢迎联系我！",
+                contactIntro: "我对嵌入式固件岗位、智能穿戴项目和技术协作保持开放态度。",
+                contactEmailLabel: "邮箱",
+                contactEmail: "your-email@example.com",
+                contactFocusLabel: "方向",
+                contactFocus: "BLE 可穿戴 · 智能戒指 · 智能手表 · 固件调试",
+                contactAvailabilityLabel: "可联系方向",
+                contactAvailability: "开放求职机会、接单项目和技术协作。",
                 cvText: "下载简历",
-                cvFile: "cv/嵌入式软件工程师-易蓉蓉的简历.pdf",
+                cvFile: "CV/嵌入式软件工程师-易蓉蓉的简历.pdf",
+                sendEmailText: "发送邮件",
                 langBtn: "中文"
             }
         };
@@ -70,12 +85,32 @@ let isEnglish = true;
             // 更新 Contact 区域
             const contactTitle = document.getElementById('contactTitle');
             const contactIntro = document.getElementById('contactIntro');
+            const contactEmailLabel = document.getElementById('contactEmailLabel');
+            const contactEmail = document.getElementById('contactEmail');
+            const contactFocusLabel = document.getElementById('contactFocusLabel');
+            const contactFocus = document.getElementById('contactFocus');
+            const contactAvailabilityLabel = document.getElementById('contactAvailabilityLabel');
+            const contactAvailability = document.getElementById('contactAvailability');
             const cvBtn = document.getElementById('cvBtn');
+            const emailBtn = document.getElementById('emailBtn');
             if (contactTitle) contactTitle.textContent = t.contactTitle;
             if (contactIntro) contactIntro.textContent = t.contactIntro;
+            if (contactEmailLabel) contactEmailLabel.textContent = t.contactEmailLabel;
+            if (contactEmail) {
+                contactEmail.textContent = t.contactEmail;
+                contactEmail.href = `mailto:${t.contactEmail}`;
+            }
+            if (contactFocusLabel) contactFocusLabel.textContent = t.contactFocusLabel;
+            if (contactFocus) contactFocus.textContent = t.contactFocus;
+            if (contactAvailabilityLabel) contactAvailabilityLabel.textContent = t.contactAvailabilityLabel;
+            if (contactAvailability) contactAvailability.textContent = t.contactAvailability;
             if (cvBtn) {
                 cvBtn.href = t.cvFile;
                 cvBtn.innerHTML = t.cvText;
+            }
+            if (emailBtn) {
+                emailBtn.href = `mailto:${t.contactEmail}`;
+                emailBtn.textContent = t.sendEmailText;
             }
             
             // 更新按钮文字
