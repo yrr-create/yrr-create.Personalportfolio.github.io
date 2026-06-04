@@ -188,6 +188,20 @@ I work across multiple SDKs and customer project branches, using Source Insight,
                 tags: ["STM32", "ARM", "RTOS"]
             }
         ];
+        //1.获取所有导航菜单的链接
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        //2.绑定点击事件
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                //3.移除所有链接的active类名
+                navLinks.forEach(nav  => {
+                    nav.classList.remove('active')
+                });
+                //4.给当前点击的链接添加active类名
+                this.classList.add('active');
+            });
+        });
+
 
         // 当前索引
         let companyIndex = 0;
