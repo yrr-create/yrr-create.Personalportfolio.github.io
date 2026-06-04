@@ -134,11 +134,11 @@ body {
         }
 
         .hero-image img {
-            width: 250px;
-            height: 430px;
+            width: 280px;
+            height: 480px;
             border-radius: 24px;
             object-fit: cover;
-            object-position: center top;
+            object-position: center 34%;
             box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
         }
 
