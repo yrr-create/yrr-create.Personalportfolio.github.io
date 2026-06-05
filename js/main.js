@@ -27,7 +27,8 @@ I work across multiple SDKs and customer project branches, using Source Insight,
                 contactAvailability: "Open to job opportunities, freelance projects, and collaboration.",
                 cvText: "Download CV",
                 cvFile: "CV/Yi_Rongrong_CV.pdf",
-                sendEmailText: "Send Email",
+                sendEmailText: "Copy Email",
+                copiedEmailText: "Email Copied",
                 langBtn: "English"
             },
             zh: {
@@ -57,7 +58,8 @@ I work across multiple SDKs and customer project branches, using Source Insight,
                 contactAvailability: "开放求职机会、接单项目和技术协作。",
                 cvText: "下载简历",
                 cvFile: "CV/嵌入式软件工程师-易蓉蓉的简历.pdf",
-                sendEmailText: "发送邮件",
+                sendEmailText: "复制邮箱",
+                copiedEmailText: "已复制",
                 langBtn: "中文"
             }
         };
@@ -120,6 +122,48 @@ I work across multiple SDKs and customer project branches, using Source Insight,
         }
 
         document.getElementById('langSwitch').addEventListener('click', switchLanguage);
+
+        function copyTextFallback(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.setAttribute('readonly', '');
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-9999px';
+            document.body.appendChild(textArea);
+            textArea.select();
+            const copied = document.execCommand('copy');
+            document.body.removeChild(textArea);
+            return copied;
+        }
+
+        async function copyContactEmail(event) {
+            event.preventDefault();
+
+            const lang = isEnglish ? 'en' : 'zh';
+            const t = translations[lang];
+            const emailBtn = document.getElementById('emailBtn');
+
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(t.contactEmail);
+                } else if (!copyTextFallback(t.contactEmail)) {
+                    window.location.href = `mailto:${t.contactEmail}`;
+                    return;
+                }
+
+                if (emailBtn) {
+                    emailBtn.textContent = t.copiedEmailText;
+                    window.setTimeout(() => {
+                        const currentLang = isEnglish ? 'en' : 'zh';
+                        emailBtn.textContent = translations[currentLang].sendEmailText;
+                    }, 1600);
+                }
+            } catch (error) {
+                window.location.href = `mailto:${t.contactEmail}`;
+            }
+        }
+
+        document.getElementById('emailBtn').addEventListener('click', copyContactEmail);
         
         // ========== 平滑滚动跳转 ==========
         document.querySelectorAll('.nav-menu a').forEach(anchor => {
