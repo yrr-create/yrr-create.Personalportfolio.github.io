@@ -10,11 +10,13 @@ let isEnglish = true;
                 subtitle: "Embedded Software Engineer",
                 aboutTitle: "About Me",
                 aboutText: `
-                Hi, I am Rongrong, an embedded firmware engineer with 4 years of experience in smart wearable products, including smart rings, watches, and bands.
+                Hi, I am Rongrong, an embedded firmware engineer with 4 years of experience in mass-produced smart wearable products, including smart rings, watches, and bands.
 <br><br>
-My work focuses on full-device firmware development, BLE applications, touch driver integration, display/UI adaptation, peripheral debugging, firmware maintenance, and customer-specific firmware customization.
+My main production experience is based on the Actions Technology AB56xx series wearable firmware platform, with additional project exposure to DA1468x and BK3288/BK32886 related firmware projects.
 <br><br>
-I work across multiple SDKs and customer project branches, using Source Insight, Code::Blocks, Visual Studio, SVN, SEGGER J-Link, and basic Git workflows for code reading, firmware development, flashing, debugging, validation, and issue tracking.
+My work focuses on Bluetooth/BLE application development, application-layer features, UI/display adaptation, full-device firmware maintenance, issue investigation, flashing, validation, and customer-specific firmware customization.
+<br><br>
+I work across multiple SDKs and customer project branches using Source Insight, Code::Blocks, Visual Studio, SVN, SEGGER J-Link, and Git for code reading, firmware development, debugging, version control, and issue tracking.
                 `,
                 expTitle: "Experience",
                 contactTitle: "Contact Me",
@@ -39,11 +41,13 @@ I work across multiple SDKs and customer project branches, using Source Insight,
                 mainTitle: "易蓉蓉",
                 subtitle: "嵌入式软件工程师",
                 aboutTitle: "关于我",
-                aboutText: `我是一名嵌入式固件工程师，拥有 4 年智能穿戴产品开发经验，主要参与智能戒指、手表、手环等产品的整机固件开发、问题定位修复与版本维护。工作内容覆盖 BLE 蓝牙应用开发、触控驱动集成适配、显示与 UI 资源适配、外设功能调试，以及客户定制版本的功能修改和问题跟进。
-<br>
-我熟悉 Source Insight、Code::Blocks、Visual Studio、SVN、SEGGER J-Link 等开发、版本管理和调试工具，同时具备 Git 基础使用经验。能够在多套 SDK 和客户项目分支中完成代码阅读、功能适配、固件编译、烧录验证和问题定位。日常开发中，我注重固件稳定性、可维护性和实际产品交付，具备从需求理解、代码调试、问题分析到固件验证的完整开发经验。
-<br>
-在项目协作中，我能够根据客户反馈和测试现象定位固件侧问题，并配合硬件、App 和测试人员完成验证闭环。相比单一功能实现，我更关注功能在真实产品中的稳定运行、不同客户版本之间的差异维护，以及后续交付风险。
+                aboutText: `我是一名嵌入式固件工程师，拥有 4 年智能穿戴量产产品开发经验，参与过智能戒指、手表、手环等产品的固件开发与维护。
+<br><br>
+我的主要量产项目经验基于中科蓝讯 AB56xx 系列穿戴固件平台，同时也接触过 DA1468x、BK3288/BK32886 相关固件项目。
+<br><br>
+我的工作内容主要覆盖 Bluetooth/BLE 应用开发、应用层功能维护、UI/显示资源适配、整机固件维护、问题定位、烧录验证，以及客户定制版本的功能修改和问题跟进。
+<br><br>
+我日常使用 Source Insight、Code::Blocks、Visual Studio、SVN、SEGGER J-Link 和 Git 进行代码阅读、固件开发、调试、版本管理和问题跟踪。
                 `,
 
 
