@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yi RongRong</title>
-    <link rel="stylesheet" href="css/styles.css?v=project-details-20260607">
+    <link rel="stylesheet" href="css/styles.css?v=image-lightbox-20260607">
 </head>
 <body>
 
@@ -195,7 +195,13 @@
         </div>
     </section>
 
-    <script src="js/main.js?v=project-details-20260607"></script>
+    <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image preview">×</button>
+        <img id="lightboxImage" src="" alt="">
+        <p id="lightboxCaption"></p>
+    </div>
+
+    <script src="js/main.js?v=image-lightbox-20260607"></script>
 
 </body>
 </html>

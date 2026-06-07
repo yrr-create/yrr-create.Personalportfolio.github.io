@@ -301,6 +301,10 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             return translations[isEnglish ? 'en' : 'zh'][key];
         }
 
+        function getCurrentProject(type) {
+            return type === 'company' ? companyProjects[companyIndex] : personalProjects[personalIndex];
+        }
+
         function renderProjectContent(type, project, detailsOpen) {
             const content = document.querySelector(`#${type}-project-card .project-content`);
             const card = document.getElementById(`${type}-project-card`);
@@ -469,6 +473,50 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             });
         }
 
+        function openImageLightbox(type) {
+            const project = getCurrentProject(type);
+            if (!project || project.img.endsWith('.mp4')) return;
+
+            const lightbox = document.getElementById('imageLightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+
+            lightboxImage.src = project.img;
+            lightboxImage.alt = getProjectText(project, 'title');
+            lightboxCaption.textContent = getProjectText(project, 'title');
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            pauseCarousel('lightbox');
+        }
+
+        function closeImageLightbox() {
+            const lightbox = document.getElementById('imageLightbox');
+            const lightboxImage = document.getElementById('lightboxImage');
+
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            lightboxImage.src = '';
+            document.body.style.overflow = '';
+            resumeCarousel('lightbox');
+        }
+
+        function setupImageLightbox() {
+            document.getElementById('company-project-card').querySelector('.project-image').addEventListener('click', () => openImageLightbox('company'));
+            document.getElementById('personal-project-card').querySelector('.project-image').addEventListener('click', () => openImageLightbox('personal'));
+            document.getElementById('lightboxClose').addEventListener('click', closeImageLightbox);
+            document.getElementById('imageLightbox').addEventListener('click', event => {
+                if (event.target.id === 'imageLightbox') {
+                    closeImageLightbox();
+                }
+            });
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && document.getElementById('imageLightbox').classList.contains('open')) {
+                    closeImageLightbox();
+                }
+            });
+        }
+
         // 分类切换
         const tabBtns = document.querySelectorAll('.tab-btn');
         const companyContainer = document.getElementById('company-projects');
@@ -503,6 +551,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
 
         // 初始化
         setupCarouselPause();
+        setupImageLightbox();
         updateCompanyProject();
         updatePersonalProject();
         resetAutoTimer();
