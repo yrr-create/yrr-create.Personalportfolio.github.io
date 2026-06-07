@@ -6,6 +6,8 @@ let isEnglish = true;
                 navExperience: "Experience",
                 navPortfolio: "Portfolio",
                 navContact: "Contact",
+                companyProjectsText: "Company Projects",
+                personalProjectsText: "Personal Projects",
                 mainTitle: "YI RONGRONG",
                 subtitle: "Embedded Software Engineer",
                 aboutTitle: "About Me",
@@ -38,6 +40,8 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 navExperience: "经验",
                 navPortfolio: "作品",
                 navContact: "联系",
+                companyProjectsText: "公司项目",
+                personalProjectsText: "个人项目",
                 mainTitle: "易蓉蓉",
                 subtitle: "嵌入式软件工程师",
                 aboutTitle: "关于我",
@@ -77,6 +81,8 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             document.querySelector('.nav-experience').textContent = t.navExperience;
             document.querySelector('.nav-portfolio').textContent = t.navPortfolio;
             document.querySelector('.nav-contact').textContent = t.navContact;
+            document.querySelector('[data-category="company"]').textContent = t.companyProjectsText;
+            document.querySelector('[data-category="personal"]').textContent = t.personalProjectsText;
             
             // 更新标题和 About
             document.getElementById('mainTitle').textContent = t.mainTitle;
@@ -123,6 +129,8 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             document.getElementById('langSwitch').textContent = t.langBtn;
             document.documentElement.lang = lang;
             isEnglish = !isEnglish;
+            updateCompanyProject();
+            updatePersonalProject();
         }
 
         document.getElementById('langSwitch').addEventListener('click', switchLanguage);
@@ -190,9 +198,12 @@ I work across multiple SDKs and customer project branches using Source Insight, 
         const companyProjects = [
             {
                 img: "img/company_projects/APP/app.png",
-                title: "APP Test Project",
-                desc: "Mobile application testing framework for embedded systems integration.",
-                tags: ["APP", "Testing", "Embedded"]
+                title: "BLE + SoftAP Camera Debugging App",
+                titleZh: "BLE + SoftAP 摄像头调试 App",
+                desc: "Android Kotlin debugging tool for smart camera/glasses devices. It uses BLE to discover and activate the device, connects to the device SoftAP Wi-Fi, and builds a TCP SDK link for live camera preview, audio, device status, and factory control.",
+                descZh: "基于 Android Kotlin 开发的智能摄像头/眼镜设备调试工具。App 通过 BLE 发现并激活设备，连接设备 SoftAP Wi-Fi，并通过 TCP SDK 建立实时预览、音频、设备状态和工厂控制通道。",
+                tags: ["Android", "BLE", "SoftAP", "TCP", "Camera"],
+                tagsZh: ["Android", "BLE", "SoftAP", "TCP", "摄像头"]
             },
             {
                 img: "img/company_projects/G22C_W19J/W19J.png",
@@ -258,6 +269,11 @@ I work across multiple SDKs and customer project branches using Source Insight, 
         // 自动轮播定时器
         let autoInterval;
 
+        function getProjectText(project, field) {
+            const zhField = `${field}Zh`;
+            return !isEnglish && project[zhField] ? project[zhField] : project[field];
+        }
+
         // 更新公司项目显示
         function updateCompanyProject() {
             const project = companyProjects[companyIndex];
@@ -271,10 +287,10 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 } else {
                     imgElement.src = project.img;
                 }
-                document.getElementById('company-project-title').textContent = project.title;
-                document.getElementById('company-project-desc').textContent = project.desc;
+                document.getElementById('company-project-title').textContent = getProjectText(project, 'title');
+                document.getElementById('company-project-desc').textContent = getProjectText(project, 'desc');
                 const tagsContainer = document.getElementById('company-project-tags');
-                tagsContainer.innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
+                tagsContainer.innerHTML = getProjectText(project, 'tags').map(tag => `<span>${tag}</span>`).join('');
             }
             updateDots('company');
         }
@@ -284,10 +300,10 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             const project = personalProjects[personalIndex];
             if (project) {
                 document.getElementById('personal-project-img').src = project.img;
-                document.getElementById('personal-project-title').textContent = project.title;
-                document.getElementById('personal-project-desc').textContent = project.desc;
+                document.getElementById('personal-project-title').textContent = getProjectText(project, 'title');
+                document.getElementById('personal-project-desc').textContent = getProjectText(project, 'desc');
                 const tagsContainer = document.getElementById('personal-project-tags');
-                tagsContainer.innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
+                tagsContainer.innerHTML = getProjectText(project, 'tags').map(tag => `<span>${tag}</span>`).join('');
             }
             updateDots('personal');
         }
