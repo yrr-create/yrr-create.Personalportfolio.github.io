@@ -8,6 +8,9 @@ let isEnglish = true;
                 navContact: "Contact",
                 companyProjectsText: "Company Projects",
                 personalProjectsText: "Personal Projects",
+                keyWorkText: "Key Work",
+                backText: "Click Back",
+                detailsText: "More details",
                 mainTitle: "YI RONGRONG",
                 subtitle: "Embedded Software Engineer",
                 aboutTitle: "About Me",
@@ -42,6 +45,9 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 navContact: "联系",
                 companyProjectsText: "公司项目",
                 personalProjectsText: "个人项目",
+                keyWorkText: "主要工作",
+                backText: "点击返回",
+                detailsText: "查看详情",
                 mainTitle: "易蓉蓉",
                 subtitle: "嵌入式软件工程师",
                 aboutTitle: "关于我",
@@ -203,7 +209,21 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 desc: "Android Kotlin debugging tool for smart camera/glasses devices. It uses BLE to discover and activate the device, connects to the device SoftAP Wi-Fi, and builds a TCP SDK link for live camera preview, audio, device status, and factory control.",
                 descZh: "基于 Android Kotlin 开发的智能摄像头/眼镜设备调试工具。App 通过 BLE 发现并激活设备，连接设备 SoftAP Wi-Fi，并通过 TCP SDK 建立实时预览、音频、设备状态和工厂控制通道。",
                 tags: ["Android", "BLE", "SoftAP", "TCP", "Camera"],
-                tagsZh: ["Android", "BLE", "SoftAP", "TCP", "摄像头"]
+                tagsZh: ["Android", "BLE", "SoftAP", "TCP", "摄像头"],
+                keyWork: [
+                    "Implemented BLE scanning, device filtering, RSSI-based selection, GATT connection, and notification handling.",
+                    "Sent BLE commands to switch the device into SoftAP mode and parsed the returned Wi-Fi SSID.",
+                    "Connected to the device hotspot using WifiNetworkSpecifier and bound the app network to SoftAP.",
+                    "Integrated the TCP SDK for live preview, audio, device status, and control.",
+                    "Added logs and breadcrumbs to diagnose BLE, Wi-Fi, TCP, and preview issues."
+                ],
+                keyWorkZh: [
+                    "实现 BLE 扫描、设备过滤、RSSI 最强设备选择、GATT 连接和通知监听。",
+                    "通过 BLE 下发进入 SoftAP 模式的控制命令，并解析设备返回的 Wi-Fi SSID。",
+                    "使用 WifiNetworkSpecifier 连接设备热点，并将 App 网络绑定到 SoftAP 连接。",
+                    "集成 TCP SDK，实现实时预览、音频、设备状态和控制通道。",
+                    "增加日志和 breadcrumb，用于定位 BLE、Wi-Fi、TCP 和预览链路问题。"
+                ]
             },
             {
                 img: "img/company_projects/G22C_W19J/W19J.png",
@@ -265,6 +285,8 @@ I work across multiple SDKs and customer project branches using Source Insight, 
         // 当前索引
         let companyIndex = 0;
         let personalIndex = 0;
+        let companyDetailsOpen = false;
+        let personalDetailsOpen = false;
         
         // 自动轮播定时器
         let autoInterval;
@@ -273,6 +295,44 @@ I work across multiple SDKs and customer project branches using Source Insight, 
         function getProjectText(project, field) {
             const zhField = `${field}Zh`;
             return !isEnglish && project[zhField] ? project[zhField] : project[field];
+        }
+
+        function getCurrentLangText(key) {
+            return translations[isEnglish ? 'en' : 'zh'][key];
+        }
+
+        function renderProjectContent(type, project, detailsOpen) {
+            const content = document.querySelector(`#${type}-project-card .project-content`);
+            const card = document.getElementById(`${type}-project-card`);
+            const carousel = document.querySelector(`#${type}-projects .carousel`);
+            const details = getProjectText(project, 'keyWork');
+
+            card.classList.toggle('detail-open', detailsOpen);
+            carousel.classList.toggle('detail-open', detailsOpen);
+
+            if (detailsOpen && details && details.length) {
+                content.innerHTML = `
+                    <button class="project-back-btn" type="button" onclick="closeProjectDetails('${type}')">${getCurrentLangText('backText')}</button>
+                    <h3>${getCurrentLangText('keyWorkText')}</h3>
+                    <ul class="project-key-work">
+                        ${details.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                `;
+                return;
+            }
+
+            const detailsButton = details && details.length
+                ? `<button class="project-more-btn" type="button" onclick="openProjectDetails('${type}')" aria-label="${getCurrentLangText('detailsText')}" title="${getCurrentLangText('detailsText')}">···</button>`
+                : '';
+
+            content.innerHTML = `
+                <h3 id="${type}-project-title">${getProjectText(project, 'title')}</h3>
+                <p id="${type}-project-desc">${getProjectText(project, 'desc')}</p>
+                <div class="project-tags" id="${type}-project-tags">
+                    ${getProjectText(project, 'tags').map(tag => `<span>${tag}</span>`).join('')}
+                </div>
+                ${detailsButton}
+            `;
         }
 
         // 更新公司项目显示
@@ -288,10 +348,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 } else {
                     imgElement.src = project.img;
                 }
-                document.getElementById('company-project-title').textContent = getProjectText(project, 'title');
-                document.getElementById('company-project-desc').textContent = getProjectText(project, 'desc');
-                const tagsContainer = document.getElementById('company-project-tags');
-                tagsContainer.innerHTML = getProjectText(project, 'tags').map(tag => `<span>${tag}</span>`).join('');
+                renderProjectContent('company', project, companyDetailsOpen);
             }
             updateDots('company');
         }
@@ -301,10 +358,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             const project = personalProjects[personalIndex];
             if (project) {
                 document.getElementById('personal-project-img').src = project.img;
-                document.getElementById('personal-project-title').textContent = getProjectText(project, 'title');
-                document.getElementById('personal-project-desc').textContent = getProjectText(project, 'desc');
-                const tagsContainer = document.getElementById('personal-project-tags');
-                tagsContainer.innerHTML = getProjectText(project, 'tags').map(tag => `<span>${tag}</span>`).join('');
+                renderProjectContent('personal', project, personalDetailsOpen);
             }
             updateDots('personal');
         }
@@ -337,13 +391,39 @@ I work across multiple SDKs and customer project branches using Source Insight, 
         // 切换项目
         function changeProject(type, direction) {
             if (type === 'company') {
+                companyDetailsOpen = false;
+                resumeCarousel('details');
                 companyIndex = (companyIndex + direction + companyProjects.length) % companyProjects.length;
                 updateCompanyProject();
             } else {
+                personalDetailsOpen = false;
+                resumeCarousel('details');
                 personalIndex = (personalIndex + direction + personalProjects.length) % personalProjects.length;
                 updatePersonalProject();
             }
             resetAutoTimer();
+        }
+
+        function openProjectDetails(type) {
+            pauseCarousel('details');
+            if (type === 'company') {
+                companyDetailsOpen = true;
+                updateCompanyProject();
+            } else {
+                personalDetailsOpen = true;
+                updatePersonalProject();
+            }
+        }
+
+        function closeProjectDetails(type) {
+            if (type === 'company') {
+                companyDetailsOpen = false;
+                updateCompanyProject();
+            } else {
+                personalDetailsOpen = false;
+                updatePersonalProject();
+            }
+            resumeCarousel('details');
         }
 
         function pauseCarousel(reason) {
@@ -401,12 +481,20 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 
                 const category = this.getAttribute('data-category');
                 if (category === 'company') {
+                    personalDetailsOpen = false;
+                    resumeCarousel('details');
                     companyContainer.classList.add('active-container');
                     personalContainer.classList.remove('active-container');
+                    updatePersonalProject();
+                    updateCompanyProject();
                     resetAutoTimer();
                 } else {
+                    companyDetailsOpen = false;
+                    resumeCarousel('details');
                     personalContainer.classList.add('active-container');
                     companyContainer.classList.remove('active-container');
+                    updateCompanyProject();
+                    updatePersonalProject();
                     resetAutoTimer();
                 }
             });
@@ -421,3 +509,5 @@ I work across multiple SDKs and customer project branches using Source Insight, 
         
         // 将 changeProject 挂载到 window 对象
         window.changeProject = changeProject;
+        window.openProjectDetails = openProjectDetails;
+        window.closeProjectDetails = closeProjectDetails;

@@ -578,6 +578,12 @@ html {
             display: flex;
             flex-direction: column;
             justify-content: center;  /* 垂直居中 */
+            position: relative;
+        }
+
+        .project-card.detail-open .project-content {
+            justify-content: flex-start;
+            padding: 28px 36px 32px;
         }
 
         .project-content h3 {
@@ -610,6 +616,59 @@ html {
             border-radius: 20px;
         }
 
+        .project-more-btn {
+            position: absolute;
+            right: 24px;
+            bottom: 20px;
+            width: 36px;
+            height: 28px;
+            border: none;
+            background: transparent;
+            color: #2c5f8a;
+            font-size: 26px;
+            line-height: 1;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .project-more-btn:hover,
+        .project-more-btn:focus-visible {
+            color: #1a3f5c;
+            transform: translateY(-1px);
+            outline: none;
+        }
+
+        .project-back-btn {
+            align-self: flex-start;
+            border: none;
+            background: transparent;
+            color: #2c5f8a;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 0;
+            margin: 0 0 18px 0;
+            cursor: pointer;
+        }
+
+        .project-back-btn:hover,
+        .project-back-btn:focus-visible {
+            color: #1a3f5c;
+            outline: none;
+        }
+
+        .project-key-work {
+            margin: 2px 0 0 0;
+            padding-left: 20px;
+            color: #4a6a85;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .project-key-work li {
+            margin-bottom: 8px;
+        }
+
         /* 导航按钮 */
         .carousel-btn {
             position: absolute;
@@ -634,6 +693,11 @@ html {
             background: transparent;
             color: #1a3f5c;
             transform: translateY(-50%) scale(1.08);
+        }
+
+        .carousel.detail-open .carousel-btn,
+        .carousel.detail-open .carousel-dots {
+            display: none;
         }
 
         .carousel-btn.prev {
@@ -709,11 +773,22 @@ html {
             .project-content {
                 padding: 20px 24px;
             }
+            .project-card.detail-open .project-content {
+                padding: 22px 24px 26px;
+            }
             .project-content h3 {
                 font-size: 18px;
             }
             .project-content p {
                 font-size: 13px;
+            }
+            .project-more-btn {
+                right: 18px;
+                bottom: 14px;
+            }
+            .project-key-work {
+                font-size: 13px;
+                line-height: 1.5;
             }
             .carousel-btn {
                 width: 28px;
