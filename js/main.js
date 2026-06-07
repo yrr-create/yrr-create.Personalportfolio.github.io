@@ -268,6 +268,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
         
         // 自动轮播定时器
         let autoInterval;
+        const carouselPauseReasons = new Set();
 
         function getProjectText(project, field) {
             const zhField = `${field}Zh`;
@@ -345,20 +346,47 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             resetAutoTimer();
         }
 
+        function pauseCarousel(reason) {
+            carouselPauseReasons.add(reason);
+        }
+
+        function resumeCarousel(reason) {
+            carouselPauseReasons.delete(reason);
+            if (carouselPauseReasons.size === 0) {
+                resetAutoTimer();
+            }
+        }
+
+        function advanceActiveProject() {
+            if (carouselPauseReasons.size > 0) return;
+
+            // 获取当前激活的分类
+            const activeContainer = document.querySelector('.projects-container.active-container');
+            if (activeContainer && activeContainer.id === 'company-projects') {
+                companyIndex = (companyIndex + 1) % companyProjects.length;
+                updateCompanyProject();
+            } else if (activeContainer && activeContainer.id === 'personal-projects') {
+                personalIndex = (personalIndex + 1) % personalProjects.length;
+                updatePersonalProject();
+            }
+        }
+
         // 重置自动轮播定时器
         function resetAutoTimer() {
             if (autoInterval) clearInterval(autoInterval);
-            autoInterval = setInterval(() => {
-                // 获取当前激活的分类
-                const activeContainer = document.querySelector('.projects-container.active-container');
-                if (activeContainer && activeContainer.id === 'company-projects') {
-                    companyIndex = (companyIndex + 1) % companyProjects.length;
-                    updateCompanyProject();
-                } else if (activeContainer && activeContainer.id === 'personal-projects') {
-                    personalIndex = (personalIndex + 1) % personalProjects.length;
-                    updatePersonalProject();
-                }
-            }, 5000);
+            autoInterval = setInterval(advanceActiveProject, 5000);
+        }
+
+        function setupCarouselPause() {
+            document.querySelectorAll('.carousel').forEach(carousel => {
+                carousel.addEventListener('mouseenter', () => pauseCarousel('hover'));
+                carousel.addEventListener('mouseleave', () => resumeCarousel('hover'));
+                carousel.addEventListener('pointerdown', () => pauseCarousel('press'));
+                carousel.addEventListener('pointerup', () => resumeCarousel('press'));
+                carousel.addEventListener('pointercancel', () => resumeCarousel('press'));
+                carousel.addEventListener('focusin', () => pauseCarousel('focus'));
+                carousel.addEventListener('focusout', () => resumeCarousel('focus'));
+            });
         }
 
         // 分类切换
@@ -386,6 +414,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
 
 
         // 初始化
+        setupCarouselPause();
         updateCompanyProject();
         updatePersonalProject();
         resetAutoTimer();
