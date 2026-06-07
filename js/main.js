@@ -226,10 +226,29 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 ]
             },
             {
-                img: "img/company_projects/G22C_W19J/W19J.png",
-                title: "W19J Module",
-                desc: "Wireless module development with comprehensive testing.",
-                tags: ["Wireless", "Module", "Testing"]
+                img: "img/company_projects/G22C/G22C.mp4",
+                title: "G22C Round Smart Watch Firmware Production Project",
+                titleZh: "G22C 圆屏智能手表固件量产项目",
+                desc: "Production firmware project for a 360x360 round-screen smart watch based on the AB5682C platform, covering UI adaptation, BLE connectivity, FOTA, health features, sports modes, and release packaging.",
+                descZh: "基于 AB5682C 平台交付的 360x360 圆屏智能手表固件项目，覆盖 UI 适配、BLE 连接、FOTA、健康功能、运动模式和出货包生成。",
+                tags: ["AB5682C", "BLE", "FOTA", "Round UI", "Production"],
+                tagsZh: ["AB5682C", "BLE", "FOTA", "圆屏 UI", "量产"],
+                keyWork: [
+                    "Adapted and debugged round-screen UI, menus, sports modes, settings, and device-side interactions.",
+                    "Integrated 360x360 GC9C01 round display, touch input, button/rotary controls, motor alerts, and related peripherals.",
+                    "Debugged connectivity features including BLE, ANCS, FOTA, and Bluetooth calling.",
+                    "Supported issue investigation and release fixes for heart rate, step counting, sports records, sleep, and other health features.",
+                    "Handled customer customization, UI resource packaging, version output, and pre-production issue closure.",
+                    "Assisted firmware release packaging, version validation, and pre-production issue closure."
+                ],
+                keyWorkZh: [
+                    "负责圆屏 UI、菜单、运动模式、设置项等功能适配与联调。",
+                    "适配 360x360 GC9C01 圆屏显示、触控、按键/旋钮、马达等外设。",
+                    "调试 BLE、ANCS、FOTA、蓝牙通话等连接类功能。",
+                    "参与心率、计步、运动记录、睡眠等健康功能的问题定位与出货修复。",
+                    "处理客户定制需求、资源打包、版本输出和量产前问题闭环。",
+                    "协助完成固件出货包生成、版本验证和量产交付前的问题闭环。"
+                ]
             },
             {
                 img: "img/company_projects/K6/2.jpg",
@@ -339,19 +358,28 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             `;
         }
 
+        function renderProjectMedia(type, project) {
+            const mediaContainer = document.querySelector(`#${type}-project-card .project-image`);
+            const mediaId = `${type}-project-img`;
+            const altText = getProjectText(project, 'title');
+            mediaContainer.classList.toggle('has-video', project.img.endsWith('.mp4'));
+
+            if (project.img.endsWith('.mp4')) {
+                mediaContainer.innerHTML = `
+                    <video id="${mediaId}" autoplay loop muted playsinline>
+                        <source src="${project.img}" type="video/mp4">
+                    </video>
+                `;
+            } else {
+                mediaContainer.innerHTML = `<img id="${mediaId}" src="${project.img}" alt="${altText}">`;
+            }
+        }
+
         // 更新公司项目显示
         function updateCompanyProject() {
             const project = companyProjects[companyIndex];
             if (project) {
-                const imgElement = document.getElementById('company-project-img');
-                // 检查文件扩展名，决定使用 img 还是 video
-                //用图片最好，视频的选项保留
-                if (project.img.endsWith('.mp4')) {
-                    // 对于视频，需要特殊处理
-                    imgElement.outerHTML = `<video id="company-project-img" autoplay loop muted style="width:100%;height:100%;object-fit:cover"><source src="${project.img}" type="video/mp4"></video>`;
-                } else {
-                    imgElement.src = project.img;
-                }
+                renderProjectMedia('company', project);
                 renderProjectContent('company', project, companyDetailsOpen);
             }
             updateDots('company');
@@ -361,7 +389,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
         function updatePersonalProject() {
             const project = personalProjects[personalIndex];
             if (project) {
-                document.getElementById('personal-project-img').src = project.img;
+                renderProjectMedia('personal', project);
                 renderProjectContent('personal', project, personalDetailsOpen);
             }
             updateDots('personal');

@@ -5,6 +5,7 @@ Desktop.ini
 
 # Editor folders
 .vscode/
+.vs/
 
 # Temporary files
 *.tmp
