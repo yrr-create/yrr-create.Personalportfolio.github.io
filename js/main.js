@@ -226,7 +226,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 ]
             },
             {
-                img: "img/company_projects/G22C/G22C.mp4",
+                img: "img/company_projects/G22C/call.jpg",
                 title: "G22C Round Smart Watch Firmware Production Project",
                 titleZh: "G22C 圆屏智能手表固件量产项目",
                 desc: "Production firmware project for a 360x360 round-screen smart watch based on the AB5682C platform, covering UI adaptation, BLE connectivity, FOTA, health features, sports modes, and release packaging.",
