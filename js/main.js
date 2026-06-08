@@ -253,10 +253,27 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 tags: ["Vibration", "Testing", "Analysis"]
             },
             {
-                img: "img/company_projects/ring/2.jpg",
-                title: "Smart Ring Controller",
-                desc: "Gesture control firmware for smart ring device.",
-                tags: ["Gesture", "Wearable", "IMU"]
+                img: "img/company_projects/ring/yuya.jpg",
+                title: "Tuya BLE Smart Ring Firmware Adaptation",
+                titleZh: "Tuya BLE 智能戒指固件适配项目",
+                desc: "AB202x-based smart ring firmware adaptation with Tuya BLE protocol integration, device authorization, app binding, health data upload, FOTA, dot-matrix display, sensor collection, and low-power feature debugging.",
+                descZh: "基于 AB202x 平台完成一款 Tuya BLE 智能戒指固件适配，负责涂鸦 BLE 协议栈接入、设备授权配置、App 绑定通信、健康数据上报、FOTA 升级、点阵显示、传感器采集和低功耗功能联调。",
+                tags: ["AB202x", "Tuya BLE", "FOTA", "Sensors", "Low Power"],
+                tagsZh: ["AB202x", "Tuya BLE", "FOTA", "传感器", "低功耗"],
+                keyWork: [
+                    "Adapted smart ring firmware on the AB202x platform with low-power BLE communication and health data collection.",
+                    "Integrated TuyaOS / Tuya BLE protocol features for app binding, device authentication, data synchronization, and OTA upgrade.",
+                    "Configured Tuya device authorization information including PID, UUID, AuthKey, BLE advertising, connection, and data reporting logic.",
+                    "Supported core smart ring features including heart rate, SpO2, step counting, sleep, brightness, find device, camera control, and message reminders.",
+                    "Debugged connection stability, light display, low power behavior, sensor collection, dot-matrix display, and version iteration issues."
+                ],
+                keyWorkZh: [
+                    "基于 AB202x 平台完成智能戒指固件适配，支持低功耗 BLE 通信与健康数据采集。",
+                    "接入 TuyaOS / Tuya BLE 协议栈，实现涂鸦 App 绑定、设备认证、数据同步和 OTA 升级能力。",
+                    "完成 Tuya 设备 PID、UUID、AuthKey 等授权信息配置，并适配 BLE 广播、连接和数据上报逻辑。",
+                    "适配心率、血氧、计步、睡眠、亮度、找设备、拍照控制、消息提醒等智能戒指核心功能。",
+                    "参与连接稳定性、灯光显示、低功耗、传感器采集、点阵显示和版本迭代问题调试。"
+                ]
             },
             {
                 img: "img/company_projects/W25/W25.png",
