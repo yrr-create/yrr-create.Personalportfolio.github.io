@@ -25,7 +25,6 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 `,
                 expTitle: "Experience",
                 contactTitle: "Contact Me",
-                contactIntro: "I am open to embedded firmware opportunities, wearable device projects, and technical collaboration.",
                 contactEmailLabel: "Email",
                 contactEmail: "yirongrong012@gmail.com",
                 contactFocusLabel: "Focus",
@@ -63,7 +62,6 @@ I work across multiple SDKs and customer project branches using Source Insight, 
 
                 expTitle: "工作经历",
                 contactTitle: "联系我",
-                contactIntro: "我对嵌入式固件岗位、智能穿戴项目和技术协作保持开放态度。",
                 contactEmailLabel: "邮箱",
                 contactEmail: "3305855572@qq.com",
                 contactFocusLabel: "方向",
@@ -102,7 +100,6 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             
             // 更新 Contact 区域
             const contactTitle = document.getElementById('contactTitle');
-            const contactIntro = document.getElementById('contactIntro');
             const contactEmailLabel = document.getElementById('contactEmailLabel');
             const contactEmail = document.getElementById('contactEmail');
             const contactFocusLabel = document.getElementById('contactFocusLabel');
@@ -112,7 +109,6 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             const cvBtn = document.getElementById('cvBtn');
             const emailBtn = document.getElementById('emailBtn');
             if (contactTitle) contactTitle.textContent = t.contactTitle;
-            if (contactIntro) contactIntro.textContent = t.contactIntro;
             if (contactEmailLabel) contactEmailLabel.textContent = t.contactEmailLabel;
             if (contactEmail) {
                 contactEmail.textContent = t.contactEmail;
@@ -263,10 +259,27 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 tags: ["Gesture", "Wearable", "IMU"]
             },
             {
-                img: "img/company_projects/W15J/WEATHER.png",
-                title: "Weather Station Project",
-                desc: "Embedded weather monitoring system with sensor integration.",
-                tags: ["Weather", "Sensors", "Data"]
+                img: "img/company_projects/W25/W25.png",
+                title: "W25 Rectangular Smart Watch Firmware Adaptation",
+                titleZh: "W25 长方屏智能手表固件适配项目",
+                desc: "AB5682C-based firmware adaptation for a 172x320 rectangular-screen smart watch, covering display, touch, UI layout, Bluetooth features, health monitoring, sports modes, notifications, FOTA, and factory test workflows.",
+                descZh: "基于 AB5682C 平台完成一款 172x320 长方屏智能手表固件适配，覆盖屏幕显示、触控、UI 布局、蓝牙功能、健康监测、运动模式、消息提醒、FOTA 和工厂测试流程。",
+                tags: ["AB5682C", "172x320", "Touch", "FOTA", "Production"],
+                tagsZh: ["AB5682C", "172x320", "触控", "FOTA", "量产"],
+                keyWork: [
+                    "Adapted the 172x320 rectangular-screen UI and layout on the AB5682C wearable firmware platform.",
+                    "Integrated the GUI_TFT_JD9853_HSD147_172320 display configuration and CST816D touch solution.",
+                    "Debugged full watch features including BLE, ANCS, FOTA, Bluetooth calling, heart rate, step counting, sports modes, messages, women's health, and factory tests.",
+                    "Handled screen, touch, UI resource, and hardware-related adaptation issues during firmware integration.",
+                    "Supported release package output, upgrade file validation, and pre-production issue closure."
+                ],
+                keyWorkZh: [
+                    "基于 AB5682C 平台适配 172x320 长方屏 UI 和页面布局。",
+                    "适配 GUI_TFT_JD9853_HSD147_172320 屏幕方案和 CST816D 触控方案。",
+                    "联调 BLE、ANCS、FOTA、蓝牙通话、心率、计步、运动、消息、女性健康和工厂测试等完整手表功能。",
+                    "处理屏幕、触控、UI 资源和硬件适配相关问题。",
+                    "支持版本出货包输出、升级文件验证和量产前问题闭环。"
+                ]
             },
             
         ];
