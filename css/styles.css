@@ -416,10 +416,14 @@ html {
         }
 
         .timeline-content h4 {
-            margin: 0 0 12px 0;
+            margin: 16px 0 8px 0;
             font-size: 15px;
-            font-weight: 450;
-            color: #4a6a85;
+            font-weight: 600;
+            color: #2c5f8a;
+        }
+
+        .timeline-content h3 + h4 {
+            margin-top: 0;
         }
 
         .timeline-content ul {
@@ -428,6 +432,13 @@ html {
         }
 
         .timeline-content li {
+            margin: 6px 0;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #3a5568;
+        }
+
+        .timeline-note {
             margin: 6px 0;
             font-size: 14px;
             line-height: 1.5;
