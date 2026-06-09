@@ -106,7 +106,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 backText: "点击返回",
                 detailsText: "查看详情",
                 mainTitle: "易蓉蓉",
-                subtitle: "嵌入式软件工程师",
+                subtitle: "嵌入式固件工程师",
                 aboutTitle: "关于我",
                 aboutText: `我是一名嵌入式固件工程师，拥有 4 年智能穿戴量产产品开发经验，参与过智能戒指、手表、手环等产品的固件开发与维护。
 <br><br>
