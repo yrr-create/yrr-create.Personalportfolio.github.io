@@ -24,6 +24,64 @@ My work focuses on Bluetooth/BLE application development, application-layer feat
 I work across multiple SDKs and customer project branches using Source Insight, Code::Blocks, Visual Studio, SVN, SEGGER J-Link, and Git for code reading, firmware development, debugging, version control, and issue tracking.
                 `,
                 expTitle: "Experience",
+                expContent: `
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date-tag">2023 - Present</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Embedded Firmware Engineer</h3>
+                        <h4>Shenzhen Jianyun Hulian Technology Co., Ltd.</h4>
+                        <ul>
+                            <li>Responsible for firmware development and maintenance of smart wearable products, including AI bracelets, smart rings and smart watches, using C/C++ for embedded feature development and iteration.</li>
+                            <li>Developed, ported and debugged capacitive touch panel (CTP), display, sensor, charging, motor and other peripheral drivers based on AB5682C and AB202x platforms.</li>
+                            <li>Implemented and optimized BLE communication features, including device pairing, data synchronization, notification handling, OTA/FOTA support and connection stability tuning.</li>
+                            <li>Collaborated with hardware, QA and production teams to analyze defects, verify fixes and improve firmware stability for mass production.</li>
+                            <li>Managed code versions using SVN, and maintained technical documents, release notes, issue records and debugging logs.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date-tag">2024 - 2026</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Bachelor's Degree | Part-time Undergraduate</h3>
+                        <h4>Changsha University of Science and Technology | Computer Science and Technology</h4>
+                        <p class="timeline-note"><strong>Core Courses:</strong> Assembly Language and Interface Technology, Operating Systems, Computer Organization Principles, C Programming, Computer Network Principles and Technology, Software Engineering.</p>
+
+                        <h4>Graduation Design | BLE + SoftAP Camera Debugging App</h4>
+                        <ul>
+                            <li>Built an Android Kotlin debugging app for smart camera/glasses devices as a graduation design project.</li>
+                            <li>Implemented BLE device discovery, GATT connection, SoftAP activation commands, Wi-Fi hotspot connection, and TCP SDK communication.</li>
+                            <li>Supported live camera preview, audio channel testing, device status reading, factory control, logging, and issue diagnosis.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date-tag">2020 - 2023</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Associate Degree</h3>
+                        <h4>Hunan Chemical Industry Polytechnic | Software Technology</h4>
+                        <p class="timeline-note"><strong>Core Courses:</strong> Programming Fundamentals (C/C++), Data Structures and Algorithms, Linux Technology and Applications, Software Engineering, Python Programming, Database Principles.</p>
+                        <p class="timeline-note"><strong>Awards:</strong> National Second Prize | National Undergraduate Mathematical Contest in Modeling (NUMCM)</p>
+
+                        <h4>Student Union Office | Administrative Assistant</h4>
+                        <p class="timeline-note">Planned and coordinated internal activities, sorted and filed official documents to ensure daily office efficiency.</p>
+                        <h4>Teaching Assistant</h4>
+                        <p class="timeline-note">Provided academic and daily guidance for freshmen.</p>
+
+                        <h4>Online Flower Shop System</h4>
+                        <ul>
+                            <li>Built a personal online flower shop system based on an existing template, focusing on backend logic adjustment, database design, testing, bug fixes, and technical documentation.</li>
+                            <li>Applied object-oriented programming to organize and adjust backend logic, and built relational database tables for data storage.</li>
+                            <li>Conducted unit testing and bug fixes, and compiled technical documents.</li>
+                        </ul>
+                    </div>
+                </div>
+                `,
                 contactTitle: "Contact Me",
                 contactEmailLabel: "Email",
                 contactEmail: "yirongrong012@gmail.com",
@@ -61,6 +119,64 @@ I work across multiple SDKs and customer project branches using Source Insight, 
 
 
                 expTitle: "工作经历",
+                expContent: `
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date-tag">2023 - 至今</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>嵌入式固件工程师</h3>
+                        <h4>深圳市简云互联科技有限公司</h4>
+                        <ul>
+                            <li>负责智能穿戴产品的固件开发与维护，包括 AI 手环、智能戒指和智能手表，使用 C/C++ 进行嵌入式功能开发和版本迭代。</li>
+                            <li>基于 AB5682C 和 AB202x 平台进行电容触摸屏、显示屏、传感器、充电、马达等外设驱动的移植、适配和调试。</li>
+                            <li>实现并优化 BLE 通信相关功能，包括设备配对、数据同步、消息通知处理、OTA/FOTA 支持和连接稳定性调试。</li>
+                            <li>配合硬件、测试和生产团队分析缺陷、验证修复结果，并提升量产阶段固件稳定性。</li>
+                            <li>使用 SVN 进行代码版本管理，并维护技术文档、发布说明、问题记录和调试日志。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date-tag">2024 - 2026</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>本科 | 非全日制</h3>
+                        <h4>长沙理工大学 | 计算机科学与技术</h4>
+                        <p class="timeline-note"><strong>核心课程：</strong>汇编语言与接口技术、操作系统、计算机组成原理、C 语言程序设计、计算机网络原理与技术、软件工程。</p>
+
+                        <h4>毕业设计 | BLE + SoftAP 摄像头调试 App</h4>
+                        <ul>
+                            <li>作为毕业设计项目，开发面向智能摄像头/眼镜设备的 Android Kotlin 调试 App。</li>
+                            <li>实现 BLE 设备发现、GATT 连接、SoftAP 激活指令、Wi-Fi 热点连接和 TCP SDK 通信流程。</li>
+                            <li>支持实时摄像头预览、音频通道测试、设备状态读取、工厂控制、日志记录和问题诊断。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date-tag">2020 - 2023</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>大专</h3>
+                        <h4>湖南化工职业技术学院 | 软件技术</h4>
+                        <p class="timeline-note"><strong>核心课程：</strong>C/C++ 程序设计基础、数据结构与算法、Linux 技术与应用、软件工程、Python 程序设计、数据库原理。</p>
+                        <p class="timeline-note"><strong>获奖：</strong>全国大学生数学建模竞赛国家二等奖</p>
+
+                        <h4>学生会办公室 | 行政助理</h4>
+                        <p class="timeline-note">策划并协调内部活动，整理和归档正式文件，协助保障办公室日常工作效率。</p>
+                        <h4>助教</h4>
+                        <p class="timeline-note">为新生提供学习和日常事务方面的指导。</p>
+
+                        <h4>网上花店系统</h4>
+                        <ul>
+                            <li>基于现有模板搭建个人网上花店系统，重点完成后端逻辑调整、数据库设计、测试、问题修复和技术文档整理。</li>
+                            <li>应用面向对象编程方法组织和调整后端逻辑，并建立关系型数据库表用于数据存储。</li>
+                            <li>进行单元测试和问题修复，并编写技术文档。</li>
+                        </ul>
+                    </div>
+                </div>
+                `,
                 contactTitle: "联系我",
                 contactEmailLabel: "邮箱",
                 contactEmail: "3305855572@qq.com",
@@ -97,6 +213,8 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             // 更新 Experience 标题
             const expTitle = document.getElementById('expTitle');
             if (expTitle) expTitle.textContent = t.expTitle;
+            const timeline = document.querySelector('#experience .timeline');
+            if (timeline) timeline.innerHTML = t.expContent;
             
             // 更新 Contact 区域
             const contactTitle = document.getElementById('contactTitle');
