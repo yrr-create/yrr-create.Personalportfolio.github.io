@@ -12,7 +12,7 @@ let isEnglish = true;
                 backText: "Click Back",
                 detailsText: "More details",
                 mainTitle: "YI RONGRONG",
-                subtitle: "Embedded Software Engineer",
+                subtitle: "Embedded Firmware Engineer",
                 aboutTitle: "About Me",
                 aboutText: `
                 Hi, I am Rongrong, an embedded firmware engineer with 4 years of experience in mass-produced smart wearable products, including smart rings, watches, and bands.
@@ -75,9 +75,8 @@ I work across multiple SDKs and customer project branches using Source Insight, 
 
                         <h4>Online Flower Shop System</h4>
                         <ul>
-                            <li>Built a personal online flower shop system based on an existing template, focusing on backend logic adjustment, database design, testing, bug fixes, and technical documentation.</li>
-                            <li>Applied object-oriented programming to organize and adjust backend logic, and built relational database tables for data storage.</li>
-                            <li>Conducted unit testing and bug fixes, and compiled technical documents.</li>
+                            <li>Built a personal online flower shop system based on an existing template, focusing on backend logic adjustment, database design, testing, and bug fixes.</li>
+                            <li>Applied object-oriented programming to organize backend logic and built relational database tables for data storage.</li>
                         </ul>
                     </div>
                 </div>
@@ -170,9 +169,8 @@ I work across multiple SDKs and customer project branches using Source Insight, 
 
                         <h4>网上花店系统</h4>
                         <ul>
-                            <li>基于现有模板搭建个人网上花店系统，重点完成后端逻辑调整、数据库设计、测试、问题修复和技术文档整理。</li>
-                            <li>应用面向对象编程方法组织和调整后端逻辑，并建立关系型数据库表用于数据存储。</li>
-                            <li>进行单元测试和问题修复，并编写技术文档。</li>
+                            <li>基于现有模板搭建个人网上花店系统，重点完成后端逻辑调整、数据库设计、测试和问题修复。</li>
+                            <li>应用面向对象编程方法组织后端逻辑，并建立关系型数据库表用于数据存储。</li>
                         </ul>
                     </div>
                 </div>
