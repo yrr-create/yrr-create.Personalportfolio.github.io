@@ -364,9 +364,30 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             },
             {
                 img: "img/company_projects/K6/2.jpg",
-                title: "Vibration Test System",
-                desc: "Vibration testing and analysis for K6 project.",
-                tags: ["Vibration", "Testing", "Analysis"]
+                title: "AI Screenless Bracelet Firmware Adaptation and Voice Interaction Project",
+                titleZh: "AI 无屏手环固件适配与语音交互项目",
+                desc: "AB5682C-based firmware adaptation for an AI screenless bracelet project, covering BLE communication, audio recording and upload, AI conversation entry, translation recording, camera and short-video control, power management, and abnormal state feedback.",
+                descZh: "基于 AB5682C 平台完成 AI 无屏手环项目的固件适配，覆盖 BLE 通信、录音与音频上传、AI 对话入口、翻译录音、拍照与短视频控制、电源管理和异常状态反馈。",
+                tags: ["AB5682C", "BLE", "Audio", "Screenless UI", "Low Power"],
+                tagsZh: ["AB5682C", "BLE", "音频", "无屏交互", "低功耗"],
+                keyWork: [
+                    "Developed firmware for an AI screenless bracelet project based on the AB5682C platform, supporting low-power BLE communication, audio recording, health data collection, and screenless interaction control.",
+                    "Designed screenless interaction logic using single click, double click, long press, swing/shake gestures, RGB LED indicators, motor vibration, and audio prompts to provide clear user feedback without a display.",
+                    "Implemented key functions including audio recording, offline audio storage, audio upload, AI conversation entry, translation recording, remote camera control, short-video control, incoming call handling, and alarm reminders.",
+                    "Implemented BLE protocol handling for App command parsing, device status reporting, audio data transmission, health data synchronization, and connection state management.",
+                    "Adapted peripheral modules including the heart rate sensor, motion sensor, battery voltage detection, charging detection, RGB LED, and vibration motor, covering low-battery alerts, charging status, full-charge status, and low-power standby behavior.",
+                    "Supported OPUS audio encoding, BLE packet transmission, and offline recording upload workflow to meet the requirements of real-time voice interaction and stable data transfer.",
+                    "Handled abnormal scenarios such as BLE disconnection, insufficient storage, recording file limit, and recording failure, with user feedback through LED and vibration patterns."
+                ],
+                keyWorkZh: [
+                    "基于 AB5682C 平台完成 AI 无屏手环项目的固件开发与适配，支持低功耗 BLE 通信、录音、健康数据采集和无屏交互控制。",
+                    "设计无屏交互逻辑，通过单击、双击、长按、甩动/摇一摇手势、RGB LED 指示、马达振动和语音提示，在无显示屏场景下提供清晰的用户反馈。",
+                    "实现录音、离线音频存储、音频上传、AI 对话入口、翻译录音、远程拍照控制、短视频控制、来电处理和闹钟提醒等核心功能。",
+                    "实现 BLE 协议处理，包括 App 指令解析、设备状态上报、音频数据传输、健康数据同步和连接状态管理。",
+                    "适配心率传感器、运动传感器、电池电压检测、充电检测、RGB LED 和振动马达等外设，覆盖低电提醒、充电状态、满电状态和低功耗待机行为。",
+                    "支持 OPUS 音频编码、BLE 分包传输和离线录音上传流程，满足实时语音交互和稳定数据传输需求。",
+                    "处理 BLE 断开、存储空间不足、录音文件数量限制和录音失败等异常场景，并通过 LED 和振动模式进行用户反馈。"
+                ]
             },
             {
                 img: "img/company_projects/ring/yuya.jpg",
@@ -421,9 +442,28 @@ I work across multiple SDKs and customer project branches using Source Insight, 
             {
                 img: "img/personal_projects/ble/2.jpg",
                 
-                title: "BLE Module Development",
-                desc: "Bluetooth Low Energy module for IoT device connectivity and data transmission.",
-                tags: ["BLE", "IoT", "Nordic"]
+                title: "BLE Smart Asset Tracker",
+                titleZh: "BLE 智能资产追踪器",
+                desc: "Low-power BLE asset tracking device based on nRF52810, designed for nearby item finding and anti-loss alerts. The project covers BLE advertising and connection, button input, LED status indication, buzzer alert, and nRF Connect verification.",
+                descZh: "基于 nRF52810 开发的低功耗 BLE 智能资产追踪器，用于近距离物品查找和防丢提醒。项目覆盖 BLE 广播与连接、按键输入、LED 状态提示、蜂鸣器提醒，以及 nRF Connect 验证。",
+                tags: ["nRF52810", "BLE", "Low Power", "Asset Tracking"],
+                tagsZh: ["nRF52810", "BLE", "低功耗", "资产追踪"],
+                keyWork: [
+                    "Designed and implemented the basic workflow for a BLE asset tag, including advertising, connection, idle, find-alert, and low-power standby states.",
+                    "Built BLE advertising, connection parameter configuration, and device discovery verification on nRF52810.",
+                    "Implemented button trigger, LED indication, and buzzer alert for nearby item finding and device status feedback.",
+                    "Verified BLE advertising, connection stability, and basic interaction flow using nRF Connect.",
+                    "Implemented low-power operation and button wake-up behavior for CR2032 battery-powered use.",
+                    "Documented hardware wiring, test steps, debugging notes, and README for reproducibility and maintenance."
+                ],
+                keyWorkZh: [
+                    "设计并实现 BLE 资产标签的基础工作流程，包括广播、连接、空闲、查找提醒和低功耗待机状态。",
+                    "基于 nRF52810 完成 BLE 广播、连接参数配置和设备发现验证。",
+                    "实现按键触发、LED 状态提示和蜂鸣器提醒，用于近距离物品查找和设备状态反馈。",
+                    "通过 nRF Connect 验证设备广播、连接稳定性和基础交互流程。",
+                    "针对 CR2032 电池供电场景实现低功耗运行和按键唤醒逻辑。",
+                    "整理硬件连接、测试步骤、调试记录和项目 README，便于后续复现和维护。"
+                ]
             },
             {
                 img: "img/personal_projects/stm32/1.jpg",
