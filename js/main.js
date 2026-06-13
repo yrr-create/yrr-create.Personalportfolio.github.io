@@ -87,7 +87,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 contactFocusLabel: "Focus",
                 contactFocus: "BLE Wearables · Embedded Firmware · MCU Development · IoT Devices",
                 contactAvailabilityLabel: "Availability",
-                contactAvailability: "Open to job opportunities, freelance projects, and collaboration.",
+                contactAvailability: "Open to job opportunities and collaboration.",
                 cvText: "Download CV",
                 cvFile: "CV/Yi_Rongrong_CV.pdf",
                 sendEmailText: "Copy Email",
@@ -125,7 +125,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                     </div>
                     <div class="timeline-content">
                         <h3>嵌入式固件工程师</h3>
-                        <h4>深圳市简云互联科技有限公司</h4>
+                        <h4>深圳市健云互联科技有限公司</h4>
                         <ul>
                             <li>负责智能穿戴产品的固件开发与维护，包括 AI 手环、智能戒指和智能手表，使用 C/C++ 进行嵌入式功能开发和版本迭代。</li>
                             <li>基于 AB5682C 和 AB202x 平台进行电容触摸屏、显示屏、传感器、充电、马达等外设驱动的移植、适配和调试。</li>
@@ -181,7 +181,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 contactFocusLabel: "方向",
                 contactFocus: "BLE 可穿戴 · 嵌入式固件 · MCU 开发 · 物联网设备",
                 contactAvailabilityLabel: "可联系方向",
-                contactAvailability: "开放求职机会、接单项目和技术协作。",
+                contactAvailability: "开放求职机会和技术协作。",
                 cvText: "下载简历",
                 cvFile: "CV/嵌入式软件工程师-易蓉蓉的简历.pdf",
                 sendEmailText: "复制邮箱",
