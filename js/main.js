@@ -70,14 +70,12 @@ I work across multiple SDKs and customer project branches using Source Insight, 
 
                         <h4>Student Union Office | Administrative Assistant</h4>
                         <p class="timeline-note">Planned and coordinated internal activities, sorted and filed official documents to ensure daily office efficiency.</p>
+                        <p class="timeline-note">Assist instructors with arranging teaching venues and preparing course materials; collect, record and grade students' assignments.</p>
+                        
                         <h4>Teaching Assistant</h4>
                         <p class="timeline-note">Provided academic and daily guidance for freshmen.</p>
 
-                        <h4>Online Flower Shop System</h4>
-                        <ul>
-                            <li>Built a personal online flower shop system based on an existing template, focusing on backend logic adjustment, database design, testing, and bug fixes.</li>
-                            <li>Applied object-oriented programming to organize backend logic and built relational database tables for data storage.</li>
-                        </ul>
+
                     </div>
                 </div>
                 `,
@@ -89,7 +87,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 contactAvailabilityLabel: "Availability",
                 contactAvailability: "Open to job opportunities and collaboration.",
                 cvText: "Download CV",
-                cvFile: "CV/Yi_Rongrong_CV.pdf",
+                cvFile: "CV/Yi_Rongrong_Embedded_Firmware_Engineer_CV.pdf",
                 sendEmailText: "Copy Email",
                 copiedEmailText: "Email Copied",
                 langBtn: "English"
@@ -164,14 +162,10 @@ I work across multiple SDKs and customer project branches using Source Insight, 
 
                         <h4>学生会办公室 | 行政助理</h4>
                         <p class="timeline-note">策划并协调内部活动，整理和归档正式文件，协助保障办公室日常工作效率。</p>
+                        <p class="timeline-note">协助讲师安排授课场地与准备授课材料，记录与收集学生的课程作业并参与评分。</p>
                         <h4>助教</h4>
                         <p class="timeline-note">为新生提供学习和日常事务方面的指导。</p>
-
-                        <h4>网上花店系统</h4>
-                        <ul>
-                            <li>基于现有模板搭建个人网上花店系统，重点完成后端逻辑调整、数据库设计、测试和问题修复。</li>
-                            <li>应用面向对象编程方法组织后端逻辑，并建立关系型数据库表用于数据存储。</li>
-                        </ul>
+                       
                     </div>
                 </div>
                 `,
