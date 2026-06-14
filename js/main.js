@@ -438,25 +438,25 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 
                 title: "BLE Smart Asset Tracker",
                 titleZh: "BLE 智能资产追踪器",
-                desc: "Low-power BLE asset tracking device based on nRF52810, designed for nearby item finding and anti-loss alerts. The project covers BLE advertising and connection, button input, LED status indication, buzzer alert, and nRF Connect verification.",
-                descZh: "基于 nRF52810 开发的低功耗 BLE 智能资产追踪器，用于近距离物品查找和防丢提醒。项目覆盖 BLE 广播与连接、按键输入、LED 状态提示、蜂鸣器提醒，以及 nRF Connect 验证。",
-                tags: ["nRF52810", "BLE", "Low Power", "Asset Tracking"],
-                tagsZh: ["nRF52810", "BLE", "低功耗", "资产追踪"],
+                desc: "Low-power-oriented BLE asset tracking prototype based on nRF52810, designed for nearby item finding and warehouse asset lookup. The project covers BLE advertising and connection, command-based device control, button input, LED status indication, PWM buzzer alert, and nRF Connect verification.",
+                descZh: "基于 nRF52810 开发的面向低功耗 BLE 资产追踪原型，用于近距离物品查找和仓储资产定位。项目覆盖 BLE 广播与连接、基于命令的设备控制、按键输入、LED 状态提示、PWM 蜂鸣器提醒，以及 nRF Connect 验证。",
+                tags: ["nRF52810", "BLE", "nRF5 SDK", "Asset Tracking", "PWM Buzzer", "Embedded"],
+                tagsZh: ["nRF52810", "BLE", "nRF5 SDK", "资产追踪", "PWM 蜂鸣器", "嵌入式"],
                 keyWork: [
-                    "Designed and implemented the basic workflow for a BLE asset tag, including advertising, connection, idle, find-alert, and low-power standby states.",
-                    "Built BLE advertising, connection parameter configuration, and device discovery verification on nRF52810.",
-                    "Implemented button trigger, LED indication, and buzzer alert for nearby item finding and device status feedback.",
-                    "Verified BLE advertising, connection stability, and basic interaction flow using nRF Connect.",
-                    "Implemented low-power operation and button wake-up behavior for CR2032 battery-powered use.",
-                    "Documented hardware wiring, test steps, debugging notes, and README for reproducibility and maintenance."
+                    "Designed and implemented the basic workflow for a BLE asset tag, including advertising, connection, idle, find-alert, and stop-alert states.",
+                    "Built BLE advertising, connection configuration, and device discovery verification on nRF52810 with S112 SoftDevice.",
+                    "Implemented a simple BLE UART command protocol: findon, findoff, and s?.",
+                    "Added button input, LED indication, and PWM buzzer alert for nearby item finding and physical asset confirmation.",
+                    "Verified BLE scanning, connection, notification, command writing, LED control, buzzer alert, and button stop behavior using nRF Connect.",
+                    "Documented hardware wiring, flashing steps, debugging notes, PWM issues, and reproducible setup instructions."
                 ],
                 keyWorkZh: [
-                    "设计并实现 BLE 资产标签的基础工作流程，包括广播、连接、空闲、查找提醒和低功耗待机状态。",
-                    "基于 nRF52810 完成 BLE 广播、连接参数配置和设备发现验证。",
-                    "实现按键触发、LED 状态提示和蜂鸣器提醒，用于近距离物品查找和设备状态反馈。",
-                    "通过 nRF Connect 验证设备广播、连接稳定性和基础交互流程。",
-                    "针对 CR2032 电池供电场景实现低功耗运行和按键唤醒逻辑。",
-                    "整理硬件连接、测试步骤、调试记录和项目 README，便于后续复现和维护。"
+                    "设计并实现 BLE 资产标签的基础工作流程，包括广播、连接、空闲、查找提醒和停止提醒状态。",
+                    "基于 nRF52810 与 S112 SoftDevice 完成 BLE 广播、连接配置和设备发现验证。",
+                    "实现简单的 BLE UART 命令协议，包括 findon、findoff 和 s?。",
+                    "实现按键输入、LED 状态提示和 PWM 蜂鸣器提醒，用于近距离物品查找和实物资产确认。",
+                    "使用 nRF Connect 验证 BLE 扫描、连接、通知、命令写入、LED 控制、蜂鸣器提醒和按键停止行为。",
+                    "整理硬件接线、烧录步骤、调试记录、PWM 问题和可复现的项目搭建说明。"
                 ]
             },
             {
