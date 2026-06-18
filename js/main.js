@@ -460,6 +460,31 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 ]
             },
             {
+                img: "img/personal_projects/voice_recorder/1.jpg",
+                title: "Basic Meeting Audio Recorder",
+                titleZh: "基础会议录音存储器",
+                desc: "Planned and researched a basic meeting audio recorder focused on an app-free, network-free, and account-free recording experience. The device starts recording with a physical button, stores audio as standard WAV files, and exposes recordings directly to a computer through USB-C.",
+                descZh: "规划并预研一款基础会议录音存储设备，目标是实现免 App、免联网、免账号的录音体验。设备通过实体按键开始录音，将音频保存为标准 WAV 文件，并通过 USB-C 连接电脑后直接显示录音文件。",
+                tags: ["ESP32-S3", "I2S", "WAV", "microSD", "USB-C", "Audio"],
+                tagsZh: ["ESP32-S3", "I2S", "WAV", "microSD", "USB-C", "音频"],
+                keyWork: [
+                    "Planned the minimum hardware architecture using ESP32-S3, digital MEMS microphone, microSD, USB-C, physical button, and LED indication.",
+                    "Designed the core recording, storage, and USB file export workflow to verify the most basic end-to-end loop first.",
+                    "Researched WAV file storage behavior, including file numbering, header rewrite after recording stops, and power-loss protection.",
+                    "Planned the firmware state machine for standby, recording, saving, USB export, and error states.",
+                    "Defined the first development phase without App, Bluetooth, Wi-Fi, AI transcription, display, or dual-microphone noise reduction to reduce early complexity.",
+                    "Defined the verification order: button and LED, microSD file access, I2S microphone capture, WAV saving, computer playback, and USB MSC export."
+                ],
+                keyWorkZh: [
+                    "规划 ESP32-S3、数字 MEMS 麦克风、microSD、USB-C、实体按键和 LED 指示的最小硬件方案。",
+                    "设计录音、存储、USB 文件导出三条核心链路，优先验证最基础的端到端闭环。",
+                    "预研 WAV 文件保存方式，包括文件编号、录音停止后回填 header、异常断电保护等关键点。",
+                    "规划固件状态机，包括待机、录音、保存、USB 导出和错误状态。",
+                    "明确第一阶段暂不加入 App、蓝牙、Wi-Fi、AI 转写、屏幕、双麦降噪等非核心功能，降低初期开发复杂度。",
+                    "制定开发验证顺序：按键和 LED、microSD 文件读写、I2S 麦克风采集、WAV 保存、电脑播放和 USB MSC 导出。"
+                ]
+            },
+            {
                 img: "img/personal_projects/stm32/1.jpg",
                 title: "STM32 Learning Projects",
                 desc: "Various STM32 development projects including peripherals and RTOS.",
