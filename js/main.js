@@ -438,25 +438,29 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                 
                 title: "BLE Smart Asset Tracker",
                 titleZh: "BLE 智能资产追踪器",
-                desc: "Low-power-oriented BLE asset tracking prototype based on nRF52810, designed for nearby item finding and warehouse asset lookup. The project covers BLE advertising and connection, command-based device control, button input, LED status indication, PWM buzzer alert, and nRF Connect verification.",
-                descZh: "基于 nRF52810 开发的面向低功耗 BLE 资产追踪原型，用于近距离物品查找和仓储资产定位。项目覆盖 BLE 广播与连接、基于命令的设备控制、按键输入、LED 状态提示、PWM 蜂鸣器提醒，以及 nRF Connect 验证。",
-                tags: ["nRF52810", "BLE", "nRF5 SDK", "Asset Tracking", "PWM Buzzer", "Embedded"],
-                tagsZh: ["nRF52810", "BLE", "nRF5 SDK", "资产追踪", "PWM 蜂鸣器", "嵌入式"],
+                desc: "A BLE warehouse asset tag prototype based on nRF52810 and Ebyte E73-2G4M04S1A. The device supports nearby item finding, BLE command control, physical LED/buzzer alerts, button-based stop control, and environmental monitoring with temperature, humidity, and VOC index reporting.",
+                descZh: "基于 nRF52810 与亿佰特 E73-2G4M04S1A 开发的 BLE 仓储资产标签原型。设备支持近距离物品查找、BLE 命令控制、实体 LED/蜂鸣器提醒、按键停止控制，以及温湿度和 VOC 指数上报等环境监测功能。",
+                tags: ["nRF52810", "BLE", "E73", "AHT20", "SGP40", "VOC"],
+                tagsZh: ["nRF52810", "BLE", "E73", "AHT20", "SGP40", "VOC"],
                 keyWork: [
-                    "Designed and implemented the basic workflow for a BLE asset tag, including advertising, connection, idle, find-alert, and stop-alert states.",
-                    "Built BLE advertising, connection configuration, and device discovery verification on nRF52810 with S112 SoftDevice.",
-                    "Implemented a simple BLE UART command protocol: findon, findoff, and s?.",
-                    "Added button input, LED indication, and PWM buzzer alert for nearby item finding and physical asset confirmation.",
-                    "Verified BLE scanning, connection, notification, command writing, LED control, buzzer alert, and button stop behavior using nRF Connect.",
-                    "Documented hardware wiring, flashing steps, debugging notes, PWM issues, and reproducible setup instructions."
+                    "Implemented a BLE asset tag workflow covering advertising, connection, idle state, find-alert state, and alert stop behavior.",
+                    "Built BLE UART communication on nRF52810 with S112 SoftDevice, using findon, findoff, and s? commands for device control and status query.",
+                    "Added physical asset finding feedback with P0.18 LED indication, PWM buzzer alert, and board button stop control.",
+                    "Integrated AHT20 over I2C for temperature and humidity monitoring, with env=normal/warning/alarm status reporting.",
+                    "Integrated GY-SGP / SGP40 over I2C and added Sensirion VOC Index processing for air quality-related asset environment monitoring.",
+                    "Changed sensor reporting to background periodic sampling, so BLE status queries return cached temperature, humidity, gas, and VOC data.",
+                    "Verified BLE scanning, connection, notification, command writing, LED control, buzzer behavior, button stop, and sensor status reporting using nRF Connect.",
+                    "Documented hardware wiring, flashing steps, SDK setup, debugging notes, sensor bring-up, and reproducible firmware setup."
                 ],
                 keyWorkZh: [
-                    "设计并实现 BLE 资产标签的基础工作流程，包括广播、连接、空闲、查找提醒和停止提醒状态。",
-                    "基于 nRF52810 与 S112 SoftDevice 完成 BLE 广播、连接配置和设备发现验证。",
-                    "实现简单的 BLE UART 命令协议，包括 findon、findoff 和 s?。",
-                    "实现按键输入、LED 状态提示和 PWM 蜂鸣器提醒，用于近距离物品查找和实物资产确认。",
-                    "使用 nRF Connect 验证 BLE 扫描、连接、通知、命令写入、LED 控制、蜂鸣器提醒和按键停止行为。",
-                    "整理硬件接线、烧录步骤、调试记录、PWM 问题和可复现的项目搭建说明。"
+                    "实现 BLE 资产标签工作流程，覆盖广播、连接、空闲、查找提醒和提醒停止行为。",
+                    "基于 nRF52810 与 S112 SoftDevice 实现 BLE UART 通信，使用 findon、findoff 和 s? 命令完成设备控制与状态查询。",
+                    "通过 P0.18 LED 指示、PWM 蜂鸣器提醒和板载按键停止控制，实现实体资产查找反馈。",
+                    "通过 I2C 集成 AHT20，实现温度和湿度监测，并支持 env=normal/warning/alarm 状态上报。",
+                    "通过 I2C 集成 GY-SGP / SGP40，并加入 Sensirion VOC Index 处理，用于资产环境空气质量相关监测。",
+                    "将传感器上报改为后台周期采样，使 BLE 状态查询可以返回缓存的温度、湿度、气体和 VOC 数据。",
+                    "使用 nRF Connect 验证 BLE 扫描、连接、通知、命令写入、LED 控制、蜂鸣器行为、按键停止和传感器状态上报。",
+                    "整理硬件接线、烧录步骤、SDK 搭建、调试记录、传感器 bring-up 和可复现的固件搭建说明。"
                 ]
             },
             {
