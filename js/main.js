@@ -49,6 +49,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                         <h3>Bachelor's Degree | Part-time Undergraduate</h3>
                         <h4>Changsha University of Science and Technology | Computer Science and Technology</h4>
                         <p class="timeline-note"><strong>Core Courses:</strong> Assembly Language and Interface Technology, Operating Systems, Computer Organization Principles, C Programming, Computer Network Principles and Technology, Software Engineering.</p>
+                        <p class="timeline-note"><strong>Certification:</strong> Cambridge Business English Certificate Vantage (BEC Vantage), Grade C.</p>
 
                         <h4>Graduation Design | BLE + SoftAP Camera Debugging App</h4>
                         <ul>
@@ -141,6 +142,7 @@ I work across multiple SDKs and customer project branches using Source Insight, 
                         <h3>本科 | 非全日制</h3>
                         <h4>长沙理工大学 | 计算机科学与技术</h4>
                         <p class="timeline-note"><strong>核心课程：</strong>汇编语言与接口技术、操作系统、计算机组成原理、C 语言程序设计、计算机网络原理与技术、软件工程。</p>
+                        <p class="timeline-note"><strong>证书：</strong>剑桥商务英语中级证书（BEC Vantage），C 等级。</p>
 
                         <h4>毕业设计 | BLE + SoftAP 摄像头调试 App</h4>
                         <ul>
